@@ -181,13 +181,22 @@ public class UI {
         g2.setColor(Color.white);
         g2.drawString(text, x, y);
 
-        text = "To Activate An Alchemy Lock, Collect 5 Orbs, Then Walk Over The Alchemy Lock.";
+
+
+        text = "To Activate An Alchemy Lock:              , Collect 5 Orbs, Then Walk Over The Alchemy Lock.";
         x = getXforCenteredText(text);
         y = gp.tileSize * 9;
         g2.setColor(Color.darkGray);
         g2.drawString(text, x + 5, y + 5);
         g2.setColor(Color.white);
         g2.drawString(text, x, y);
+        try {
+            Image powerInputImage = ImageIO.read(getClass().getResourceAsStream("/objects/powerInput.png"));
+            g2.drawImage(powerInputImage, x + gp.tileSize*4 + 35, y - gp.tileSize / 2 - 10, gp.tileSize, gp.tileSize, null);
+        } catch (Exception e) {
+
+        }
+
 
         text = "Player2 Can Only See Which Orbs Were Picked Up When They Hover Over Them.";
         x = getXforCenteredText(text);
@@ -220,7 +229,6 @@ public class UI {
         g2.drawString(text, x + 5, y + 5);
         g2.setColor(Color.red);
         g2.drawString(text, x, y);
-
     }
 
     public void drawTitleScreen() {
